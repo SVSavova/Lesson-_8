@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+/*
+Tрябва да си купите нови маратонки. Оглеждате офертите, но имате
+няколко изисквания:
+1. Цената им не трябва да е над 150 лв.;
+2. Tрябва да са размер 44 или 45;
+3. Tрябва да не са черни;
+4. Tрябва задължително да можете да ги върнете;
+▪ Напишете проверка с IF-ELSE която да отразява всички условия.
+ */
+public class task_2 {
+    public static void main(String[] args) {
+//= "white" || color == "yellow" || color == "red" || color == "green" || color == "brown" || color == "blue"„
+
+        double price; // под 150 лв
+        int numberShoes; // 44 или 45
+        String color = ""; // различни от черни
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Въведе цена: ");
+        price = scanner.nextDouble();
+        System.out.print("Въведи номер: ");
+        numberShoes = scanner.nextInt();
+        System.out.print("Въведи цвят [white, " + "yellow, " + "red, " + "green, " + "brown, " + "blue or black]: ");
+        color = scanner.next();
+
+            if(price > 150){
+                System.out.print("Цената е висока. ");
+            }
+            else{
+                System.out.print("Цената е приемлива. ");
+            }
+            if(numberShoes < 44 || numberShoes > 45){
+                System.out.print("Обувките не са твоя номер. ");
+            }
+            else{
+                System.out.println("Обувките са ти по мярка. ");
+            }
+
+            switch (color){
+                case "black":
+                    System.out.println("Не трява да си купуваш черни обувки!");
+                    break;
+                case "white":
+                    System.out.println("Цветът е добър.");
+                    break;
+                case "yellow":
+                    System.out.println("Цветът е добър.");
+                    break;
+                case "red":
+                    System.out.println("Цветът е добър.");
+                    break;
+                case "green":
+                    System.out.println("Цветът е добър.");
+                    break;
+                case "brown":
+                    System.out.println("Цветът е добър.");
+                    break;
+                case "blue":
+                    System.out.println("Цветът е добър.");
+                    break;
+
+                default:
+                    System.out.println("Цветът е необичаен, но поне не е черен ;)");
+            }
+
+        System.out.println("Можеш да ги върнеш, ако решиш да ги купиш...");
+
+    }
+}

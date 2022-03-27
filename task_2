@@ -16,6 +16,7 @@ public class task_2 {
         double price; // под 150 лв
         int numberShoes; // 44 или 45
         String color = ""; // различни от черни
+        boolean canReturn = true;
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Въведе цена: ");
@@ -25,7 +26,7 @@ public class task_2 {
         System.out.print("Въведи цвят [white, " + "yellow, " + "red, " + "green, " + "brown, " + "blue or black]: ");
         color = scanner.next();
 
-            if(price > 150){
+            if(price > 150 && canReturn != false){
                 System.out.print("Цената е висока. ");
             }
             else{
@@ -69,3 +70,4 @@ public class task_2 {
 
     }
 }
+

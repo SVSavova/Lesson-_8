@@ -1,0 +1,36 @@
+/*
+Да напишем Java програма, която проверява дали
+дадена буква е гласна или съгласна
+▪Гласните в английския език са “a”, “e”, “i”, “o”, “u”
+▪Да проверим какво се въвежда в конзолата и да не
+приемаме друго освен букви
+▪https://www.javatpoint.com/java-ascii-table - да
+проверим asci таблицата кои са главните и кои са
+малките букви.
+ */
+
+import java.util.Scanner;
+
+public class task_5 {
+    public static void main(String[] args) {
+
+        System.out.print("Enter a symbol: ");
+        Scanner scanner = new Scanner(System.in);
+        String symbol = scanner.next();
+
+        boolean vowels = symbol.equals("a") || symbol.equals("e") || symbol.equals("i") || symbol.equals("o") || symbol.equals("u")
+                || symbol.equals("A") || symbol.equals("E") || symbol.equals("I") || symbol.equals("O") || symbol.equals("U");
+
+        if (symbol.length() > 1){
+            System.out.println("Invalid symbol.");
+        }
+        else{
+            if (vowels == true){
+                System.out.println("The symbol is vowels.");
+            }
+            else{
+                System.out.println("The symbol is consonants.");
+            }
+        }
+    }
+}

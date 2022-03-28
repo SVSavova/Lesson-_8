@@ -1,0 +1,44 @@
+/*
+Задача 5
+Да напишем Java програма, която да решава
+квадратно уравнение:
+▪ Имаме входни параметри: a, b, c
+▪ Да проверим дискриминантата D
+ -- при D > 0 – имаме два корена
+ -- при D = 0 – корените са еднакви
+ -- при D < 0 – Няма реални корени
+▪ Да намерим корените на уравнението
+
+b*b − 4ac
+
+ */
+
+import java.util.Scanner;
+
+public class task_6 {
+    public static void main(String[] args) {
+
+        int a;
+        int b;
+        int c;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number A:");
+        a = scanner.nextInt();
+        System.out.println("Enter number B:");
+        b = scanner.nextInt();
+        System.out.println("Enter number C:");
+        c = scanner.nextInt();
+
+        int discriminant = (b * b) - (4 * a * c);
+
+        if(discriminant > 0){
+            System.out.println("There are two roots.");
+        }else if(discriminant == 0){
+            System.out.println("The roots is same.");
+        }else{
+            System.out.println("D is " + discriminant + "." + " There are no real roots.");
+        }
+    }
+}
+

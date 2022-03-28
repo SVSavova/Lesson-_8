@@ -9,28 +9,61 @@
 малките букви.
  */
 
+
+import java.util.Locale;
 import java.util.Scanner;
 
 public class task_5 {
     public static void main(String[] args) {
 
-        System.out.print("Enter a symbol: ");
+        System.out.print("Enter a letter: ");
         Scanner scanner = new Scanner(System.in);
-        String symbol = scanner.next();
+        String letter = scanner.next();
+        boolean capitalLetter = letter.charAt(0) >= 65 && letter.charAt(0) <= 90;
+        boolean smallLetter = letter.charAt(0) >= 97 && letter.charAt(0) <= 122;
+//
+//        boolean vowels = letter.equals("a") || letter.equals("e") || letter.equals("i") || letter.equals("o") || letter.equals("u")
+//                || letter.equals("A") || letter.equals("E") || letter.equals("I") || letter.equals("O") || letter.equals("U");
+//
+//        if (letter.length() > 1){
+//            System.out.println("Invalid letter.");
+//        }
+//        else{
+//            if (vowels == true){
+//                System.out.println("The letter is vowels.");
+//            }
+//            else{
+//                System.out.println("The letter is consonants.");
+//            }
+//        }
+        // ВАРИАНТ 2:===============================================================================================
 
-        boolean vowels = symbol.equals("a") || symbol.equals("e") || symbol.equals("i") || symbol.equals("o") || symbol.equals("u")
-                || symbol.equals("A") || symbol.equals("E") || symbol.equals("I") || symbol.equals("O") || symbol.equals("U");
+        if(letter.length()>1) {
+            System.out.println("Invalid letters!");
 
-        if (symbol.length() > 1){
-            System.out.println("Invalid symbol.");
+
+        }else if(smallLetter == false && capitalLetter == false){
+            System.out.println("It is not alphabet letter!");
         }
-        else{
-            if (vowels == true){
-                System.out.println("The symbol is vowels.");
-            }
-            else{
-                System.out.println("The symbol is consonants.");
+        else {
+            switch (letter){
+                case "a":
+                case "e":
+                case "o":
+                case "i":
+                case "u":
+                case "A":
+                case "E":
+                case "O":
+                case "I":
+                case "U":
+                    System.out.println("The letter is vowels.");
+                    break;
+                default:
+                    System.out.println("The letter is consonants.");
+                    break;
             }
         }
     }
 }
+

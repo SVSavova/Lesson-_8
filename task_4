@@ -1,0 +1,38 @@
+/*
+Да напишем Java програма, която да проверява дали
+дадена година е високосна. Една година е високосна,
+ако:
+1. Дели се равномерно на 100
+2. Ако се дели на 100, то трябва да се дели и на 400
+3. C изключение на това, всички останали години,
+делящи се равномерно на 4, са високосни.
+
+Всяка година, която се дели точно на четири, е високосна, - year / 4 ==0;
+с изключение на годините, които се делят точно на 100, -  year / 4 & year / 100
+но тези вековни години са високосна, ако се делят точно на 400. - year / 4 & 100 & 400
+Например годините 1700, 1800 и 1900 са не високосни години, а годините 1600 и 2000 са.
+ */
+
+import java.util.Scanner;
+
+public class task_4 {
+    public static void main(String[] args) {
+        System.out.println();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a year: ");
+        int year = scanner.nextInt();
+
+
+        if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0) {
+            System.out.println("This year is leap.");
+        }
+        else if(year % 100 == 0 && year % 4==0){
+            System.out.println("This year is not leap.");
+        }
+        else if(year % 4 == 0){
+            System.out.println("This year is leap.");
+        }else {
+            System.out.println("This year is not leap.");
+        }
+    }
+}

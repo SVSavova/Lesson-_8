@@ -1,0 +1,47 @@
+/*
+Задача 2
+Напишете програма, която проверява дали две числа
+с плаваща запетая са еднакви до първият знак след
+запетаята, вторият, третият или четвъртият.
+▪Pазликата между тях може да минимална…
+▪Как да намерим разликата?
+ */
+
+import java.util.Scanner;
+
+public class task_3 {
+    public static void main(String[] args) {
+        double result ;
+        double numberA;
+        double numberB;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter A: ");
+        numberA = scanner.nextDouble();
+        System.out.println("Enter B: ");
+        numberB = scanner.nextDouble();
+
+
+        if(numberA < numberB){
+            double temp = numberA;
+            numberA = numberB;
+            numberB = temp;
+            System.out.println( numberA);
+            System.out.println( numberB);
+            result = numberA - numberB;
+
+            if(result <= 0.1 ){
+                System.out.println("They are the same.");
+            }else {
+                System.out.println("They are not the same.");
+            }
+        }else if(numberA >= numberA){
+            result = numberA - numberB;
+
+            if(result < 0.1 || result == 0){
+                System.out.println("They are the same.");
+            }else {
+                System.out.println("They are not the same.");
+            }
+        }
+    }
+}
